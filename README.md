@@ -29,8 +29,11 @@ Ok, don't believe me, here's a video demonstrating this
 ***** TODO:::: INSERT YOUTUBE VIDEO HERE *****
 
 Developer Note:
-If you like this, I'm dirt poor (for real) - so donations and words of encouragement are gladly accepted by snail mail at: Brian Gregory 1805 NE 94th Street #59 Vancouver, Washington 98665
+If you like this, I'm dirt poor (for real) - so donations and words of encouragement are gladly accepted by snail mail at: 
+
+Brian Gregory 1805 NE 94th Street #59 Vancouver, Washington 98665
  
 And you can find more of my stuff on my Youtube channel at: https://www.youtube.com/channel/UCPDllySnQNlsQM0oyA_4-Wg
+
 This script/ software and associated content has no license. You are free to distribute it in any way you see fit. 
 
