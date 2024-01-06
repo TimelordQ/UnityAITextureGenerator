@@ -193,13 +193,13 @@ public class MyCustomEditor : EditorWindow
         //string command = string.Format("D:\\Develop\\Unity\\TextToMaterial\\pbrMAT.py \"{0}\" \"tmp\" 1", textureToGenerate.Trim());
         string fileNameOutput = textureToGenerate.Trim();
         fileNameOutput = fileNameOutput.Replace(" ,", "");
-        HashSet<char> charsToKill = new HashSet<char>() { ',', ']', '[', '(', ')' };
+        HashSet<char> charsToKill = new HashSet<char>() { ',', ']', '[', '(', ')', ':' };
         fileNameOutput = fileNameOutput.ReplaceMultiple(charsToKill, ' ');
         fileNameOutput = fileNameOutput.Replace(" ", "");
         sAssetName = fileNameOutput;
         Directory.CreateDirectory(sROOTDIRECTORYFORPYTHON);
         sFileToImport = string.Format("{1}\\{0}_0.png", fileNameOutput, sROOTDIRECTORYFORPYTHON);
-        string args = string.Format("{0}|{1}|1", textureToGenerate.Trim(), fileNameOutput);
+        string args = string.Format("pbr {0}|{1}|1", textureToGenerate.Trim(), fileNameOutput);
 
         SendMessageToGenerator(args);
 
@@ -255,8 +255,11 @@ public class MyCustomEditor : EditorWindow
                 string tName = string.Format("t{0}", sAssetName.ToUpper());
                 string mName = string.Format("m{0}", sAssetName.ToUpper());
                 string sAssetsFile = string.Format("{0}/{2}/{1}.png", UnityEngine.Application.dataPath, tName, sTEXTURESPATH);
+                System.IO.File.Delete(sAssetsFile);
                 System.IO.File.WriteAllBytes(sAssetsFile, bytes);
 
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
                 AssetDatabase.ImportAsset(sAssetsFile);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
@@ -270,14 +273,18 @@ public class MyCustomEditor : EditorWindow
                 myMat.EnableKeyword("_METALLICGLOSSMAP");
 
                 myMat.SetTexture("_MainTex", texture);
-                //myMat.SetTexture("_BumpMap", texture);
+                myMat.SetTexture("_DetailMask", texture);
                 //myMat.SetTexture("_MetallicGlossMap", texture);
                 myMat.SetTexture("_SpecGlossMap", texture);
                 myMat.SetTexture("_MaskMap", texture);
                 myMat.SetTexture("_ParallaxMap", texture);
-                //myMat.SetTexture("_OcclusionMap", texture);
+                myMat.SetTexture("_OcclusionMap", texture);
                 // myMat.SetTexture("_NormalMap", texture);
-                AssetDatabase.CreateAsset(myMat, string.Format("Assets/{1}/{0}.mat", mName, sMATERIALSPATH));
+                string sMATERIALFILE = string.Format("Assets/{1}/{0}.mat", mName, sMATERIALSPATH);
+                AssetDatabase.DeleteAsset(sMATERIALFILE);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+                AssetDatabase.CreateAsset(myMat, sMATERIALFILE);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
 
