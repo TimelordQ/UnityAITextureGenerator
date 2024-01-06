@@ -19,6 +19,7 @@ THIS SCRIPT MUST BE PLACED IN THE ASSETS->EDITOR in your Unity Project for this 
    Following the download instructions here: https://github.com/AUTOMATIC1111/stable-diffusion-webui to set up the environment.
 2. Place PBRHandler.py AND pbrMAT.py in any directory of your choice. Take note of that directory.
 3. Open a project in Unity. Create a Folder named "Editor" if it's not already there, and then place the file "Texture Generator.cs" in that folder.
+4. Update the constant value in TEXTURE DIFFUSION.CS to point to the directory you placed the python files. 
 
 That's it. 
 
