@@ -26,7 +26,7 @@ Yep. That's sincerely it.
 
 Ok, don't believe me, here's a video demonstrating this 
 
-***** TODO:::: INSERT YOUTUBE VIDEO HERE *****
+https://youtu.be/GsEGIxdpNtQ
 
 Developer Note:
 If you like this, I'm dirt poor (for real) - so donations and words of encouragement are gladly accepted by snail mail at: 
