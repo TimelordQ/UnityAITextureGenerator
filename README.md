@@ -26,8 +26,9 @@ Yep. That's sincerely it.
 
 Ok, don't believe me, here's a video demonstrating this 
 
-<img src="https://github.com/universalbri/UnityAITextureGenerator/blob/main/image.png" width="200">
-https://youtu.be/GsEGIxdpNtQ</img>
+<a href="https://youtu.be/GsEGIxdpNtQ">
+<img src="https://github.com/universalbri/UnityAITextureGenerator/blob/main/image.png" width="500">
+</img></a>
 
 Developer Note:
 If you like this, I'm dirt poor (for real) - so donations and words of encouragement are gladly accepted by snail mail at: 
